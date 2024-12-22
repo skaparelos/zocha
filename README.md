@@ -8,15 +8,16 @@ npm run start
 ```
 The code uses a setTimeout function called every minute to check and update reservations.
 
-The code creates a Map to store reservations and users in memory and when the app is stopped it writes things to files:
+The code creates a Map to store reservations and users in memory and when uses a file-based storage to store things to files:
 1. data/reservations.json
 2. data/users.json
 
-When loading the app it loads the files and continues checking and updating. You can delete the data folder and the app will fetch the data again and store it.
+When loading the app it loads the files and continues checking and updating. You can delete the data/ folder and the app will fetch the data and store them again.
 
 ## How I approached the problem
 
-Used [Proxyman](https://proxyman.io/) to intercept requests on the ResyOS app
+Used [Proxyman](https://proxyman.io/) to intercept requests on the ResyOS app and understand how it works.
+Challenges faced involved going through the API calls and investigating which of those are relevant and how I can use them.
 
 ## How it works
 
