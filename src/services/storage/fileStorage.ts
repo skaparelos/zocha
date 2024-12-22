@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { ReservationDetails } from './types/reservations';
+import { ReservationDetails } from '../../types/reservations';
 
 export async function saveToDisk(
   reservations: Map<string, ReservationDetails>,

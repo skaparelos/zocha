@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { ReservationsIdsResponse } from '../types/reservations';
+import { ReservationsIdsResponse } from '../../types/reservations';
 
 export async function getReservationIds(startDate: string, endDate: string, jwtToken: string): Promise<ReservationsIdsResponse[]> {
   try {

@@ -1,21 +1,23 @@
-import { isTokenExpired, refreshAuthToken } from './resy/auth';
+import { isTokenExpired, refreshAuthToken } from './services/resy/auth';
 import dotenv from 'dotenv';
-import { getReservationDetails, getReservationIds } from './resy/reservations';
+import { getReservationDetails, getReservationIds } from './services/resy/reservations';
 import { ReservationDetails } from './types/reservations';
-import { getUserDetails } from './resy/users';
+import { getUserDetails } from './services/resy/users';
 import {
-  updateAllUsers,
   logReservations,
   updateAllReservations,
   filterReservationsToCheck
 } from './utils/reservationUtils';
-import { loadFromDisk, saveToDisk } from './db';
+import { updateAllUsers } from './utils/userUtils';
+import { loadFromDisk, saveToDisk } from './services/storage/fileStorage';
+
 
 // Load environment variables from the `.env` file
 dotenv.config();
 
 let allReservations: Map<string, ReservationDetails> = new Map();
 let allUsers: Map<string, string> = new Map();
+
 
 async function checkAndUpdateReservations(authToken: string, shortJwtToken: string): Promise<void> {
   try {

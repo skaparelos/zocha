@@ -1,11 +1,5 @@
 import { ReservationDetails } from '../types/reservations';
 
-export function updateAllUsers(userDetails: any[], allUsers: Map<string, string>): void {
-  userDetails.forEach((user) =>
-    allUsers.set(user.user_id.toString(), `${user.first_name} ${user.last_name}`)
-  );
-}
-
 export function logReservations(allReservations: Map<string, ReservationDetails>): void {
   for (const [key, value] of allReservations.entries()) {
     console.log(`Reservation ID: ${key}`);
