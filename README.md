@@ -24,6 +24,7 @@ This solution uses 4 APIs to fetch data from Resy.
 
 1. Fetch reservations for a time period:
 `https://api.resyos.com/4/os/reservation/ids?end_datetime=...&start_datetime=...`
+
 EXAMPLE OUTPUT:
 ```
 [{
@@ -35,7 +36,9 @@ EXAMPLE OUTPUT:
 
 2. Fetch reservation details:
 `https://api.resyos.com/5/os/reservations`
+
 INPUT: {"ids": ["fly_xxxxxxx"]}
+
 EXAMPLE OUTPUT:
 ```
 {
@@ -60,7 +63,9 @@ EXAMPLE OUTPUT:
 
 3. Fetch user details:
 `https://api.resyos.com/2/os/users`
+
 INPUT: ids=30653022,6483602
+
 EXAMPLE OUTPUT:
 ```
 [{
