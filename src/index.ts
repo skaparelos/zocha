@@ -18,7 +18,6 @@ dotenv.config();
 let allReservations: Map<string, ReservationDetails> = new Map();
 let allUsers: Map<string, string> = new Map();
 
-
 async function checkAndUpdateReservations(authToken: string, shortJwtToken: string): Promise<void> {
   try {
 

@@ -1,11 +1,22 @@
 # Overview
 
 ## Run
+Before running the following commands fill in the `RESY_AUTH_TOKEN` in the `.env` file using the value sent in the email.
 ```
 npm i
 npm run start
 ```
-The code uses a setTimeout function called every minute to check and update reservations
+The code uses a setTimeout function called every minute to check and update reservations.
+
+The code creates a Map to store reservations and users in memory and when the app is stopped it writes things to files:
+1. data/reservations.json
+2. data/users.json
+
+When loading the app it loads the files and continues checking and updating. You can delete the data folder and the app will fetch the data again and store it.
+
+## How I approached the problem
+
+Used [Proxyman](https://proxyman.io/) to intercept requests on the ResyOS app
 
 ## How it works
 
